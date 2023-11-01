@@ -74,12 +74,19 @@
 							{{svg "octicon-git-branch" 14 "gt-mr-2"}}{{index $.IssueRefEndNames .ID}}
 						</a>
 					{{end}}
-					{{$tasks := .GetTasks}}
-					{{if gt $tasks 0}}
-						{{$tasksDone := .GetTasksDone}}
+					{{$tasksAndDeps := .GetTasksAndDeps $.Context}}
+					{{if gt $tasksAndDeps 0}}
 						<span class="checklist">
-							{{svg "octicon-checklist" 14 "gt-mr-2"}}{{$tasksDone}} / {{$tasks}}
-							<progress value="{{$tasksDone}}" max="{{$tasks}}"></progress>
+							{{$tasksDone := .GetTasksDone}}
+							{{with $tasks := .GetTasks}}
+								{{svg "octicon-checklist" 14 "gt-mr-2"}}{{$tasksDone}} / {{$tasks}}
+							{{end}}
+							{{$depsDone := .GetDepsDone $.Context}}
+							{{with $deps := .GetDeps $.Context}}
+								{{svg "octicon-issue-tracks" 14 "gt-mr-2"}}{{$depsDone}} / {{$deps}}
+							{{end}}
+							{{$tasksAndDepsDone := .GetTasksAndDepsDone $.Context}}
+							<progress value="{{$tasksAndDepsDone}}" max="{{$tasksAndDeps}}"></progress>
 						</span>
 					{{end}}
 					{{if ne .DeadlineUnix 0}}

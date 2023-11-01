@@ -110,8 +110,12 @@
   padding-left: 5px;
 }
 
+.issue.list > .item .desc .checklist svg:not(:first-child) {
+  margin-left: 5px;
+}
+
 .issue.list > .item .desc .checklist progress {
-  margin-left: 2px;
+  margin-left: 5px;
   width: 80px;
   height: 6px;
   display: inline-block;
