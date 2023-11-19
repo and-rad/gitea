@@ -42,9 +42,16 @@
 			</div>
 		</div>
 		<div class="ui divider"></div>
+		<div class="project-navbar ui tabular menu gt-overflow-x-auto gt-overflow-y-hidden">
+			{{range .Projects}}
+			<div class="item{{if eq .ID $.Project.ID}} active{{end}}">
+				{{svg "octicon-project" 16 "gt-mr-3"}}
+				<a href="{{.Link}}" class="muted">{{.Title}}</a>
+			</div>
+			{{end}}
+		</div>
 		<div class="ui two column stackable grid">
 			<div class="column">
-				<h2 class="project-title">{{$.Project.Title}}</h2>
 				<div class="content project-description">{{$.Project.RenderedContent|Str2html}}</div>
 			</div>
 			{{if and $.CanWriteProjects (not $.Repository.IsArchived)}}

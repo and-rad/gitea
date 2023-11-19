@@ -99,6 +99,21 @@
   padding-left: 4px;
 }
 
+.project-navbar.ui.tabular.menu {
+  border: none;
+}
+
+.project-navbar.ui.tabular.menu::after {
+  border-bottom: 1px solid var(--color-secondary);
+  visibility: visible;
+  flex-grow: 1;
+  height: auto;
+}
+
+.project-navbar.ui.tabular.menu > .item {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
 .repository .issue-content-right .menu {
   overflow-x: auto;
   max-height: 500px;
