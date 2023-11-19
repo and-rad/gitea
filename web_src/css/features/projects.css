@@ -117,6 +117,11 @@
   margin: auto;
 }
 
+.board-card progress {
+  margin: 0.5rem -0.5rem -0.5rem;
+  height: 5px;
+}
+
 .card-ghost {
   border-style: dashed !important;
   background: none !important;
