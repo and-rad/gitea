@@ -6,6 +6,27 @@
   margin: 0 0.5em;
 }
 
+.project-navbar.ui.tabular.menu {
+  border: none;
+}
+
+.project-navbar.ui.tabular.menu::after {
+  border-bottom: 1px solid var(--color-secondary);
+  visibility: visible;
+  content: "";
+  flex-grow: 1;
+  height: auto;
+}
+
+.project-navbar.ui.tabular.menu > .item {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.project-toolbar {
+  justify-content: end;
+  margin-top: 1rem;
+}
+
 .project-column {
   background-color: var(--color-project-board-bg) !important;
   border: 1px solid var(--color-secondary) !important;

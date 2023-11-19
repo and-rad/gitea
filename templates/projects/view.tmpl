@@ -1,8 +1,18 @@
 {{$canWriteProject := and .CanWriteProjects (or (not .Repository) (not .Repository.IsArchived))}}
 
 <div class="ui container">
-	<div class="gt-df gt-sb gt-ac gt-mb-4">
-		<h2 class="gt-mb-0">{{.Project.Title}}</h2>
+	<div class="project-navbar ui tabular menu gt-overflow-x-auto gt-overflow-y-hidden">
+		{{range .Projects}}
+		<div class="item{{if eq .ID $.Project.ID}} active{{end}}">
+			{{svg "octicon-project" 16}}
+			<a href="{{.Link ctx}}" class="muted">{{.Title}}</a>
+		</div>
+		{{end}}
+	</div>
+
+	<div class="content">{{$.Project.RenderedContent|Str2html}}</div>
+
+	<div class="project-toolbar gt-df gt-ac gt-mb-4">
 		{{if $canWriteProject}}
 			<div class="ui compact mini menu">
 				<a class="item" href="{{.Link}}/edit?redirect=project">
@@ -57,8 +67,6 @@
 			</div>
 		{{end}}
 	</div>
-
-	<div class="content">{{$.Project.RenderedContent|Str2html}}</div>
 
 	<div class="divider"></div>
 </div>

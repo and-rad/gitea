@@ -10,6 +10,7 @@ import (
 	"net/url"
 	"strings"
 
+	"code.gitea.io/gitea/models/db"
 	issues_model "code.gitea.io/gitea/models/issues"
 	"code.gitea.io/gitea/models/perm"
 	project_model "code.gitea.io/gitea/models/project"
@@ -367,11 +368,22 @@ func ViewProject(ctx *context.Context) {
 		return
 	}
 
+	projects, _, err := project_model.FindProjects(ctx, project_model.SearchOptions{
+		RepoID:  project.RepoID,
+		OrderBy: db.SearchOrderByID,
+		Type:    project_model.TypeRepository,
+	})
+	if err != nil {
+		ctx.ServerError("GetProjects", err)
+		return
+	}
+
 	ctx.Data["IsProjectsPage"] = true
 	ctx.Data["CanWriteProjects"] = ctx.Repo.Permission.CanWrite(unit.TypeProjects)
 	ctx.Data["Project"] = project
 	ctx.Data["IssuesMap"] = issuesMap
 	ctx.Data["Columns"] = boards // TODO: rename boards to columns in backend
+	ctx.Data["Projects"] = projects
 
 	ctx.HTML(http.StatusOK, tplProjectsView)
 }
