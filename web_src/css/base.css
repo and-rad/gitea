@@ -943,7 +943,8 @@ ol.ui.list li,
 img.ui.avatar,
 .ui.avatar img,
 .ui.avatar svg {
-  border-radius: var(--border-radius);
+  border-radius: 50%;
+  border-color: var(--color-secondary);
   object-fit: contain;
   aspect-ratio: 1;
 }

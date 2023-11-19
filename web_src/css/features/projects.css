@@ -4,6 +4,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   margin: 0 0.5em;
+  --color-card: #fff;
 }
 
 .project-navbar.ui.tabular.menu {
@@ -110,6 +111,13 @@
 .card-attachment-images img:only-child {
   max-height: 90px;
   margin: auto;
+}
+
+.issue-card progress {
+  border-radius: 0 0 4px 4px;
+  margin: 8px 0 -9px -11px;
+  width: calc(100% + 22px);
+  height: 5px;
 }
 
 .card-ghost {
