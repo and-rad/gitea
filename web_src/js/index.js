@@ -7,6 +7,7 @@ import {initDashboardRepoList} from './components/DashboardRepoList.vue';
 
 import {initGlobalCopyToClipboardListener} from './features/clipboard.js';
 import {initContextPopups} from './features/contextpopup.js';
+import {initInlineIssueText} from './features/inlineissue.js';
 import {initRepoGraphGit} from './features/repo-graph.js';
 import {initHeatmap} from './features/heatmap.js';
 import {initImageDiff} from './features/imagediff.js';
@@ -112,6 +113,7 @@ onDomReady(() => {
 
   initCommentContent();
   initContextPopups();
+  initInlineIssueText();
   initHeatmap();
   initImageDiff();
   initMarkupAnchors();

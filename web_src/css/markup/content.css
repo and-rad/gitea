@@ -517,6 +517,15 @@
   padding-left: 2em;
 }
 
+.markup .ref-issue .issue-id {
+  color: var(--color-text-light-2);
+}
+
+.markup .ref-issue svg {
+  vertical-align: sub;
+  margin-right: 2px;
+}
+
 .file-revisions-btn {
   display: block;
   float: left;
