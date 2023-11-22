@@ -68,10 +68,15 @@
 }
 
 #issue-list .flex-item-body .checklist progress {
-  margin-left: 2px;
+  margin-left: 5px;
   width: 80px;
   height: 6px;
   display: inline-block;
+}
+
+#issue-list .flex-item-body svg:first-child,
+#issue-list .flex-item-body .checklist svg {
+  margin-left: 5px;
 }
 
 #issue-list .flex-item-body .checklist progress::-webkit-progress-value {

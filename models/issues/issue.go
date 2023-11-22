@@ -445,6 +445,40 @@ func (issue *Issue) GetTasksDone() int {
 	return len(issueTasksDonePat.FindAllStringIndex(issue.Content, -1))
 }
 
+func (issue *Issue) GetDeps(ctx context.Context) int {
+	deps, err := issue.BlockedByDependencies(ctx, db.ListOptions{ListAll: true})
+	if err != nil {
+		log.Error(err.Error())
+		return 0
+	}
+	return len(deps)
+}
+
+func (issue *Issue) GetDepsDone(ctx context.Context) int {
+	deps, err := issue.BlockedByDependencies(ctx, db.ListOptions{ListAll: true})
+	if err != nil {
+		log.Error(err.Error())
+		return 0
+	}
+
+	done := 0
+	for _, d := range deps {
+		if d.IsClosed {
+			done++
+		}
+	}
+
+	return done
+}
+
+func (issue *Issue) GetTasksAndDeps(ctx context.Context) int {
+	return issue.GetTasks() + issue.GetDeps(ctx)
+}
+
+func (issue *Issue) GetTasksAndDepsDone(ctx context.Context) int {
+	return issue.GetTasksDone() + issue.GetDepsDone(ctx)
+}
+
 // GetLastEventTimestamp returns the last user visible event timestamp, either the creation of this issue or the close.
 func (issue *Issue) GetLastEventTimestamp() timeutil.TimeStamp {
 	if issue.IsClosed {
