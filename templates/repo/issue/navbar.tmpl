@@ -1,4 +1,5 @@
 <h2 class="ui compact small menu header small-menu-items issue-list-navbar">
 	<a class="{{if .PageIsLabels}}active {{end}}item" href="{{.RepoLink}}/labels">{{ctx.Locale.Tr "repo.labels"}}</a>
 	<a class="{{if .PageIsMilestones}}active {{end}}item" href="{{.RepoLink}}/milestones">{{ctx.Locale.Tr "repo.milestones"}}</a>
+	<a class="{{if and (eq .MilestoneID -1) (eq .ProjectID -1) (eq .State "open")}}active {{end}}item" href="{{.RepoLink}}/issues?milestone=-1&project=-1&state=open">{{ctx.Locale.Tr "repo.backlog"}}</a>
 </h2>
