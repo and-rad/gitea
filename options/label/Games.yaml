@@ -1,0 +1,199 @@
+labels:
+  - name: "Importance/Low"
+    color: 009800
+    description: "Low importance, delegate or dismiss"
+    exclusive: true
+  - name: "Importance/Mid"
+    color: fbca04
+    description: "Medium importance, evaluate priority later"
+    exclusive: true
+  - name: "Importance/High"
+    color: eb6420
+    description: "High importance, schedule or handle right away"
+    exclusive: true
+
+  - name: "Urgency/Low"
+    color: 009800
+    description: "Low urgency, schedule or dismiss"
+    exclusive: true
+  - name: "Urgency/Mid"
+    color: fbca04
+    description: "Medium urgency, evaluate priority later"
+    exclusive: true
+  - name: "Urgency/High"
+    color: eb6420
+    description: "High urgency, delegate or handle right away"
+    exclusive: true
+
+  - name: "Bug"
+    color: e11d21
+    description: "Something is not working as intended"
+  - name: "Bug/Crash"
+    color: e11d21
+    description: "Bug causes game to crash"
+    exclusive: true
+  - name: "Bug/Performance"
+    color: e11d21
+    description: "Bug causes performance issues"
+    exclusive: true
+  - name: "Bug/Regression"
+    color: e11d21
+    description: "Bug breaks a feature that worked in a previous build"
+    exclusive: true
+
+  - name: "Effort/01"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/02"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/03"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/05"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/08"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/13"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/21"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+  - name: "Effort/?"
+    color: bfe5bf
+    description: "Effort estimation for a task or user story"
+    exclusive: true
+
+  - name: "Model/Story"
+    color: 207de5
+    description: "Design model; story arcs and narrative"
+    exclusive: true
+  - name: "Model/Lore"
+    color: 207de5
+    description: "Design model; Background information not related to the immediate story experience"
+    exclusive: true
+  - name: "Model/Character"
+    color: 207de5
+    description: "Design model; playable characters and NPCs"
+    exclusive: true
+  - name: "Model/Location"
+    color: 207de5
+    description: "Design model; levels and environments as well as locations mentioned but not visited"
+    exclusive: true
+  - name: "Model/Faction"
+    color: 207de5
+    description: "Design model; strongly or loosely affiliated groups of characters"
+    exclusive: true
+  - name: "Model/Mechanic"
+    color: 207de5
+    description: "Design model; gameplay mechanics"
+    exclusive: true
+  - name: "Model/Item"
+    color: 207de5
+    description: "Design model; items, loot, collectibles"
+    exclusive: true
+
+  - name: "Platform/Windows"
+    color: d0d0d0
+    description: "Tasks or issues related to the Windows platform"
+    exclusive: true
+  - name: "Platform/X11"
+    color: d0d0d0
+    description: "Tasks or issues related to the Linux and BSD platforms"
+    exclusive: true
+  - name: "Platform/MacOS"
+    color: d0d0d0
+    description: "Tasks or issues related to the MacOS platform"
+    exclusive: true
+  - name: "Platform/Switch"
+    color: d0d0d0
+    description: "Tasks or issues related to the Nintendo Switch platform"
+    exclusive: true
+  - name: "Platform/XboxOne"
+    color: d0d0d0
+    description: "Tasks or issues related to the XBox One platform"
+    exclusive: true
+  - name: "Platform/XboxSeries"
+    color: d0d0d0
+    description: "Tasks or issues related to the XBox Series X/S platform"
+    exclusive: true
+  - name: "Platform/PS4"
+    color: d0d0d0
+    description: "Tasks or issues related to the PlayStation 4 platform"
+    exclusive: true
+  - name: "Platform/PS5"
+    color: d0d0d0
+    description: "Tasks or issues related to the PlayStation 5 platform"
+    exclusive: true
+  - name: "Platform/SteamDeck"
+    color: d0d0d0
+    description: "Tasks or issues related to the Steam OS platform"
+    exclusive: true
+
+  - name: "Topic/Story"
+    color: c7def8
+    description: "Tasks or issues related to the completion of story model items"
+    exclusive: true
+  - name: "Topic/Lore"
+    color: c7def8
+    description: "Tasks or issues related to the completion of lore model items"
+    exclusive: true
+  - name: "Topic/Character"
+    color: c7def8
+    description: "Tasks or issues related to the completion of character model items"
+    exclusive: true
+  - name: "Topic/Location"
+    color: c7def8
+    description: "Tasks or issues related to the completion of location model items"
+    exclusive: true
+  - name: "Topic/Faction"
+    color: c7def8
+    description: "Tasks or issues related to the completion of faction model items"
+    exclusive: true
+  - name: "Topic/Mechanic"
+    color: c7def8
+    description: "Tasks or issues related to the completion of mechanics model items"
+    exclusive: true
+  - name: "Topic/Item"
+    color: c7def8
+    description: "Tasks or issues related to the completion of item model items"
+    exclusive: true
+
+  - name: "Category/2D Art"
+    color: d4c5f9
+    description: "Textures, sprites, concept art, UI"
+    exclusive: true
+  - name: "Category/3D Art"
+    color: d4c5f9
+    description: "Models, environments, animation, cinematics"
+    exclusive: true
+  - name: "Category/Audio"
+    color: d4c5f9
+    description: "Music, sound effects, voice acting, spatialization"
+    exclusive: true
+  - name: "Category/Code"
+    color: d4c5f9
+    description: "Systems, gameplay, tools programming"
+    exclusive: true
+  - name: "Category/Design"
+    color: d4c5f9
+    description: "Levels, gameplay, puzzles & minigames, balancing, writing"
+    exclusive: true
+  - name: "Category/Idea"
+    color: d4c5f9
+    description: "Potential feature, needs more discussion, come back to this later"
+    exclusive: true
+  - name: "Category/User Story"
+    color: d4c5f9
+    description: "Feature from the user's perspective, possibly combining many categories in sub-tasks"
+    exclusive: true
