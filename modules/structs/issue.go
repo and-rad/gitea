@@ -154,6 +154,7 @@ type IssueTemplate struct {
 	About    string              `json:"about" yaml:"about"` // Using "description" in a template file is compatible
 	Labels   IssueTemplateLabels `json:"labels" yaml:"labels"`
 	Ref      string              `json:"ref" yaml:"ref"`
+	Project  string              `json:"project" yaml:"project"`
 	Content  string              `json:"content" yaml:"-"`
 	Fields   []*IssueFormField   `json:"body" yaml:"body"`
 	FileName string              `json:"file_name" yaml:"-"`

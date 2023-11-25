@@ -861,6 +861,24 @@ func setTemplateIfExists(ctx *context.Context, ctxDataKey string, possibleFiles 
 		ctx.Data[issueTemplateTitleKey] = template.Title
 		ctx.Data[ctxDataKey] = template.Content
 
+		if template.Project != "" {
+			projects := []*project_model.Project{}
+			if ps, _, err := project_model.FindProjects(ctx, project_model.SearchOptions{RepoID: ctx.Repo.Repository.ID}); err == nil {
+				projects = ps
+			}
+			if ps, _, err := project_model.FindProjects(ctx, project_model.SearchOptions{OwnerID: ctx.Repo.Owner.ID}); err == nil {
+				projects = append(projects, ps...)
+			}
+
+			for _, p := range projects {
+				if template.Project == p.Title {
+					ctx.Data["Project"] = p
+					ctx.Data["project_id"] = p.ID
+					break
+				}
+			}
+		}
+
 		if template.Type() == api.IssueTemplateTypeYaml {
 			// Replace field default values by values from query
 			for _, field := range template.Fields {
