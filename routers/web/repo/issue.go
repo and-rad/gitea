@@ -879,6 +879,22 @@ func setTemplateIfExists(ctx *context.Context, ctxDataKey string, possibleFiles 
 			}
 		}
 
+		if template.Milestone != "" {
+			milestones, _, err := issues_model.GetMilestones(issues_model.GetMilestonesOption{
+				RepoID: ctx.Repo.Repository.ID,
+				State:  api.StateOpen,
+			})
+			if err == nil {
+				for _, m := range milestones {
+					if template.Milestone == m.Name {
+						ctx.Data["Milestone"] = m
+						ctx.Data["milestone_id"] = m.ID
+						break
+					}
+				}
+			}
+		}
+
 		if template.Type() == api.IssueTemplateTypeYaml {
 			// Replace field default values by values from query
 			for _, field := range template.Fields {

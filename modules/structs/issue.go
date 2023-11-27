@@ -149,15 +149,16 @@ type IssueFormField struct {
 // IssueTemplate represents an issue template for a repository
 // swagger:model
 type IssueTemplate struct {
-	Name     string              `json:"name" yaml:"name"`
-	Title    string              `json:"title" yaml:"title"`
-	About    string              `json:"about" yaml:"about"` // Using "description" in a template file is compatible
-	Labels   IssueTemplateLabels `json:"labels" yaml:"labels"`
-	Ref      string              `json:"ref" yaml:"ref"`
-	Project  string              `json:"project" yaml:"project"`
-	Content  string              `json:"content" yaml:"-"`
-	Fields   []*IssueFormField   `json:"body" yaml:"body"`
-	FileName string              `json:"file_name" yaml:"-"`
+	Name      string              `json:"name" yaml:"name"`
+	Title     string              `json:"title" yaml:"title"`
+	About     string              `json:"about" yaml:"about"` // Using "description" in a template file is compatible
+	Labels    IssueTemplateLabels `json:"labels" yaml:"labels"`
+	Ref       string              `json:"ref" yaml:"ref"`
+	Project   string              `json:"project" yaml:"project"`
+	Milestone string              `json:"milestone" yaml:"milestone"`
+	Content   string              `json:"content" yaml:"-"`
+	Fields    []*IssueFormField   `json:"body" yaml:"body"`
+	FileName  string              `json:"file_name" yaml:"-"`
 }
 
 type IssueTemplateLabels []string
